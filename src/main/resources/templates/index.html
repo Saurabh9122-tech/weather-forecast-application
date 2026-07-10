@@ -4,15 +4,121 @@
 <head>
     <meta charset="UTF-8">
     <title th:text="${title}">Weather Forecast</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            animation: fadeIn 1s ease;
+        }
+
+        .weather-icon {
+            font-size: 70px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 2.3rem;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #ffe082;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            background: white;
+            color: #2196f3;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #2196f3;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+    </style>
+
 </head>
 
 <body>
 
-<h1>🌤 Weather Forecast Application</h1>
+<div class="container">
 
-<h3>Welcome Saurabh!</h3>
+    <div class="weather-icon">🌤️</div>
 
-<p>Spring Boot is working successfully.</p>
+    <h1>Weather Forecast Application</h1>
+
+    <h3>Welcome, Saurabh 👋</h3>
+
+    <p>
+        Spring Boot is running successfully.<br>
+        Search real-time weather forecasts for any city around the world.
+    </p>
+
+    <a href="/weather" class="btn">
+        🌍 Check Weather
+    </a>
+
+    <footer>
+        Developed with ❤️ using Spring Boot & Thymeleaf
+    </footer>
+
+</div>
 
 </body>
 
