@@ -2,19 +2,78 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
+    <meta charset="UTF-8">
     <title>Weather Result</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background:#4facfe;
+            color:white;
+            text-align:center;
+            margin-top:60px;
+        }
+
+        .card{
+            width:420px;
+            margin:auto;
+            background:white;
+            color:#333;
+            padding:30px;
+            border-radius:15px;
+            box-shadow:0 5px 15px rgba(0,0,0,.2);
+        }
+
+        h2{
+            color:#2196f3;
+        }
+
+        p{
+            font-size:18px;
+        }
+
+        a{
+            text-decoration:none;
+            background:#2196f3;
+            color:white;
+            padding:10px 20px;
+            border-radius:8px;
+        }
+    </style>
+
 </head>
 
 <body>
 
-<h1>Weather Forecast</h1>
+<div class="card">
 
-<h2 th:text="${city}"></h2>
+    <h2 th:text="${weather.city}"></h2>
 
-<h3 th:text="${message}"></h3>
+    <p>
+        🌡 Temperature :
+        <span th:text="${weather.temperature}"></span> °C
+    </p>
 
-<a href="/">Search Again</a>
+    <p>
+        💧 Humidity :
+        <span th:text="${weather.humidity}"></span> %
+    </p>
+
+    <p>
+        🌬 Wind Speed :
+        <span th:text="${weather.windSpeed}"></span> m/s
+    </p>
+
+    <p>
+        ☁ Weather :
+        <span th:text="${weather.description}"></span>
+    </p>
+
+    <br>
+
+    <a href="/">Search Again</a>
+
+</div>
 
 </body>
-
 </html>

@@ -1,5 +1,6 @@
 package com.saurabh.weatherforecast.controller;
 
+import com.saurabh.weatherforecast.model.WeatherResponse;
 import com.saurabh.weatherforecast.service.WeatherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,12 +17,10 @@ public class WeatherController {
     @GetMapping("/weather")
     public String getWeather(@RequestParam String city, Model model) {
 
-        model.addAttribute("city", city);
+        WeatherResponse weather = weatherService.getWeather(city);
 
-        model.addAttribute("message",
-                weatherService.getWelcomeMessage());
+        model.addAttribute("weather", weather);
 
         return "weather";
     }
-
 }
