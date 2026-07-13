@@ -1,5 +1,7 @@
 package com.saurabh.weatherforecast.model;
 
+import java.util.List;
+
 public class WeatherResponse {
 
     private String city;
@@ -12,6 +14,8 @@ public class WeatherResponse {
     private double windSpeed;
     private String description;
     private String icon;
+
+    private List<Forecast> forecastList;
 
     public String getCity() {
         return city;
@@ -91,5 +95,13 @@ public class WeatherResponse {
 
     public void setIcon(String icon) {
         this.icon = icon;
+    }
+
+    public List<Forecast> getForecastList() {
+        return forecastList;
+    }
+
+    public void setForecastList(List<Forecast> forecastList) {
+        this.forecastList = forecastList;
     }
 }

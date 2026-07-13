@@ -17,10 +17,19 @@ public class WeatherController {
     @GetMapping("/weather")
     public String getWeather(@RequestParam String city, Model model) {
 
-        WeatherResponse weather = weatherService.getWeather(city);
+        try {
 
-        model.addAttribute("weather", weather);
+            WeatherResponse weather = weatherService.getWeather(city);
 
-        return "weather";
+            model.addAttribute("weather", weather);
+
+            return "weather";
+
+        } catch (Exception e) {
+
+            return "error";
+
+        }
+
     }
 }
