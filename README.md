@@ -143,17 +143,16 @@ http://localhost:8080/
 
 ### 🏠 Home Page
 
-![Home Page](screenshots/Screenshot%202026-07-13%20152227.png)
+![Home Page](Screenshot%202026-07-13%20152227.png)
 
 
 ### 🌦️ Weather Result Page
 
-![Weather Result](screenshots/Screenshot%202026-07-13%20152247.png)
+![Weather Result](Screenshot%202026-07-13%20152247.png)
 
-![Weather Result](screenshots/Screenshot%202026-07-13%20152310.png)
+![Weather Result](Screenshot%202026-07-13%20152310.png)
 
 ---
-
 ## 🔄 Application Workflow
 
 ```
