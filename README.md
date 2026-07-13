@@ -141,23 +141,16 @@ http://localhost:8080/
 
 ## 📸 Screenshots
 
-### Home Page
+### 🏠 Home Page
 
-(Add your screenshot here)
+![Home Page](screenshots/Screenshot%202026-07-13%20152227.png)
 
-```
-![Home Page](Screenshot 2026-07-13 152227.png)
-```
 
-### Weather Result Page
+### 🌦️ Weather Result Page
 
-(Add your screenshot here)
+![Weather Result](screenshots/Screenshot%202026-07-13%20152247.png)
 
-```
-![Weather Result](screenshots/Screenshot 2026-07-13 152247.png)
-![Weather Result](screenshots/Screenshot 2026-07-13 152310.png)
-
-```
+![Weather Result](screenshots/Screenshot%202026-07-13%20152310.png)
 
 ---
 
