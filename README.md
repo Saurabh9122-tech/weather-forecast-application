@@ -146,7 +146,7 @@ http://localhost:8080/
 (Add your screenshot here)
 
 ```
-![Home Page](screenshots/Screenshot 2026-07-13 152227.png)
+![Home Page](Screenshot 2026-07-13 152227.png)
 ```
 
 ### Weather Result Page
