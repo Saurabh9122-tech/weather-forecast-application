@@ -14,7 +14,7 @@
         }
 
         body {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -30,7 +30,7 @@
             padding: 40px;
             text-align: center;
             color: white;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.25);
             animation: fadeIn 1s ease;
         }
 
@@ -56,12 +56,24 @@
             margin-bottom: 25px;
         }
 
+        input {
+            width: 80%;
+            padding: 15px;
+            border: none;
+            border-radius: 50px;
+            outline: none;
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
         .btn {
             display: inline-block;
             padding: 14px 30px;
             background: white;
             color: #2196f3;
-            text-decoration: none;
+            border: none;
+            cursor: pointer;
             border-radius: 50px;
             font-size: 18px;
             font-weight: bold;
@@ -74,7 +86,35 @@
             transform: scale(1.05);
         }
 
+
+        /* Loading Section */
+        #loading {
+            display: none;
+            margin-top: 25px;
+            font-size: 20px;
+            font-weight: bold;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+
+        /* Footer */
+        footer {
+            margin-top: 35px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.3);
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+
         @keyframes fadeIn {
+
             from {
                 opacity: 0;
                 transform: translateY(40px);
@@ -84,43 +124,43 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+
         }
 
-        footer {
-            margin-top: 30px;
-            font-size: 14px;
-            opacity: 0.9;
-        }
-        input {
-            width: 80%;
-            padding: 15px;
-            border: none;
-            border-radius: 50px;
-            outline: none;
-            font-size: 18px;
-            text-align: center;
-            margin-bottom: 20px;
-        }
     </style>
 
 </head>
 
+
 <body>
+
 
 <div class="container">
 
-    <div class="weather-icon">🌤️</div>
 
-    <h1>Weather Forecast Application</h1>
+    <div class="weather-icon">
+        🌤️
+    </div>
 
-    <h3>Welcome, Saurabh 👋</h3>
+
+    <h1>
+        Weather Forecast Application
+    </h1>
+
+
+    <h3>
+        Welcome,Buddy 👋
+    </h3>
+
 
     <p>
         Spring Boot is running successfully.<br>
         Search real-time weather forecasts for any city around the world.
     </p>
 
-    <form action="/weather" method="get">
+
+
+    <form action="/weather" method="get" onsubmit="showLoading()">
 
         <input
                 type="text"
@@ -128,18 +168,54 @@
                 placeholder="Enter City Name"
                 required>
 
+
         <br><br>
+
 
         <button class="btn" type="submit">
             🌍 Check Weather
         </button>
 
+
     </form>
+
+
+
+    <!-- Loading Message -->
+    <div id="loading">
+        Searching Weather... ⏳
+    </div>
+
+
+
     <footer>
-        Developed with ❤️ using Spring Boot & Thymeleaf
+
+        <p>
+            Developed by <b>Saurabh Kumar</b>
+        </p>
+
+        <p>
+            Java | Spring Boot | Thymeleaf | OpenWeather API
+        </p>
+
     </footer>
 
+
 </div>
+
+
+
+<script>
+
+    function showLoading(){
+
+        document.getElementById("loading").style.display = "block";
+
+    }
+
+</script>
+
+
 
 </body>
 
