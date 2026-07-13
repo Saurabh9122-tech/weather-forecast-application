@@ -3,42 +3,108 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Weather Result</title>
+    <title>Weather Forecast</title>
 
     <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
         body{
-            font-family: Arial, sans-serif;
-            background:#4facfe;
-            color:white;
-            text-align:center;
-            margin-top:60px;
+            background:linear-gradient(135deg,#4facfe,#00f2fe);
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
         }
 
         .card{
-            width:420px;
-            margin:auto;
+
+            width:480px;
             background:white;
-            color:#333;
+            border-radius:20px;
             padding:30px;
-            border-radius:15px;
-            box-shadow:0 5px 15px rgba(0,0,0,.2);
+            box-shadow:0 15px 35px rgba(0,0,0,.25);
+            text-align:center;
+
+        }
+
+        h1{
+
+            color:#2196f3;
+            margin-bottom:20px;
+
+        }
+
+        img{
+
+            width:100px;
+            height:100px;
+
         }
 
         h2{
+
+            margin-top:10px;
+            color:#333;
+
+        }
+
+        .temp{
+
+            font-size:42px;
             color:#2196f3;
+            font-weight:bold;
+            margin:15px 0;
+
         }
 
-        p{
-            font-size:18px;
+        table{
+
+            width:100%;
+            border-collapse:collapse;
+            margin-top:20px;
+
         }
 
-        a{
+        td{
+
+            padding:12px;
+            border-bottom:1px solid #ddd;
+            text-align:left;
+
+        }
+
+        td:last-child{
+
+            text-align:right;
+            font-weight:bold;
+
+        }
+
+        .btn{
+
+            margin-top:25px;
+            display:inline-block;
             text-decoration:none;
             background:#2196f3;
             color:white;
-            padding:10px 20px;
+            padding:12px 25px;
             border-radius:8px;
+            transition:.3s;
+
         }
+
+        .btn:hover{
+
+            background:#1976d2;
+
+        }
+
     </style>
 
 </head>
@@ -47,33 +113,62 @@
 
 <div class="card">
 
+    <h1>Weather Report</h1>
+
+    <img th:src="'https://openweathermap.org/img/wn/' + ${weather.icon} + '@2x.png'">
+
     <h2 th:text="${weather.city}"></h2>
 
-    <p>
-        🌡 Temperature :
+    <div class="temp">
+
         <span th:text="${weather.temperature}"></span> °C
+
+    </div>
+
+    <p style="text-transform:capitalize; color:gray;"
+       th:text="${weather.description}">
     </p>
 
-    <p>
-        💧 Humidity :
-        <span th:text="${weather.humidity}"></span> %
-    </p>
+    <table>
 
-    <p>
-        🌬 Wind Speed :
-        <span th:text="${weather.windSpeed}"></span> m/s
-    </p>
+        <tr>
+            <td>🥵 Feels Like</td>
+            <td th:text="${weather.feelsLike} + ' °C'"></td>
+        </tr>
 
-    <p>
-        ☁ Weather :
-        <span th:text="${weather.description}"></span>
-    </p>
+        <tr>
+            <td>🔻 Minimum Temp</td>
+            <td th:text="${weather.minTemp} + ' °C'"></td>
+        </tr>
 
-    <br>
+        <tr>
+            <td>🔺 Maximum Temp</td>
+            <td th:text="${weather.maxTemp} + ' °C'"></td>
+        </tr>
 
-    <a href="/">Search Again</a>
+        <tr>
+            <td>💧 Humidity</td>
+            <td th:text="${weather.humidity} + ' %'"></td>
+        </tr>
+
+        <tr>
+            <td>🌬 Wind Speed</td>
+            <td th:text="${weather.windSpeed} + ' m/s'"></td>
+        </tr>
+
+        <tr>
+            <td>📊 Pressure</td>
+            <td th:text="${weather.pressure} + ' hPa'"></td>
+        </tr>
+
+    </table>
+
+    <a href="/" class="btn">
+        🔍 Search Another City
+    </a>
 
 </div>
 
 </body>
+
 </html>

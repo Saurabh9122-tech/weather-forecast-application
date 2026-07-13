@@ -4,12 +4,14 @@ public class WeatherResponse {
 
     private String city;
     private double temperature;
+    private double feelsLike;
+    private double minTemp;
+    private double maxTemp;
     private int humidity;
+    private int pressure;
     private double windSpeed;
     private String description;
-
-    public WeatherResponse() {
-    }
+    private String icon;
 
     public String getCity() {
         return city;
@@ -27,12 +29,44 @@ public class WeatherResponse {
         this.temperature = temperature;
     }
 
+    public double getFeelsLike() {
+        return feelsLike;
+    }
+
+    public void setFeelsLike(double feelsLike) {
+        this.feelsLike = feelsLike;
+    }
+
+    public double getMinTemp() {
+        return minTemp;
+    }
+
+    public void setMinTemp(double minTemp) {
+        this.minTemp = minTemp;
+    }
+
+    public double getMaxTemp() {
+        return maxTemp;
+    }
+
+    public void setMaxTemp(double maxTemp) {
+        this.maxTemp = maxTemp;
+    }
+
     public int getHumidity() {
         return humidity;
     }
 
     public void setHumidity(int humidity) {
         this.humidity = humidity;
+    }
+
+    public int getPressure() {
+        return pressure;
+    }
+
+    public void setPressure(int pressure) {
+        this.pressure = pressure;
     }
 
     public double getWindSpeed() {
@@ -49,5 +83,13 @@ public class WeatherResponse {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
     }
 }
